@@ -1,9 +1,9 @@
 {
   "name": "generator-fedp",
-  "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "version": "0.2.0",
+  "description": "A front-end project initialization generator for Yeoman",
   "keywords": [
-    "yeoman-generator"
+    "generator-fedp"
   ],
   "homepage": "https://github.com/hiwanz/generator-fedp",
   "bugs": "https://github.com/hiwanz/generator-fedp/issues",
