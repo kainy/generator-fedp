@@ -2,7 +2,7 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
-var ncp = require('ncp').ncp;
+
 
 
 var fedpGenerator = module.exports = function fedpGenerator(args, options, config) {
@@ -42,12 +42,12 @@ fedpGenerator.prototype.app = function app() {
   var _base = this.src._base;
   var _dest = this.src._destBase;
 
-  this.mkdir('bower_components');
+  this.directory('bower_components');
   this.directory('demo', 'demo');
-  ncp(_base + '\\dist', _dest + '\\dist',function(err){});
-  this.mkdir('doc');
-  this.mkdir('node_modules');
-  ncp(_base + '\\src', _dest + '\\src',function(err){});
+  this.directory('dist', 'dist');
+  this.directory('doc');
+  this.directory('node_modules');
+  this.directory('src', 'src');
   this.directory('test', 'test');
   console.log('Directories initialization done!');
   
