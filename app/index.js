@@ -42,11 +42,11 @@ fedpGenerator.prototype.app = function app() {
   var _base = this.src._base;
   var _dest = this.src._destBase;
 
-  this.directory('bower_components');
+  this.mkdir('bower_components');
   this.directory('demo', 'demo');
   this.directory('dist', 'dist');
-  this.directory('doc');
-  this.directory('node_modules');
+  this.mkdir('doc');
+  this.mkdir('node_modules');
   this.directory('src', 'src');
   this.directory('test', 'test');
   console.log('Directories initialization done!');
