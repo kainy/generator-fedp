@@ -1,6 +1,6 @@
 {
   "name": "generator-fedp",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A front-end project initialization generator for Yeoman",
   "keywords": [
     "generator-fedp"
