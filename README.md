@@ -1,4 +1,4 @@
-# generator-fedp [![Build Status](https://secure.travis-ci.org/hiwanz/generator-17173fedp.png?branch=master)](https://travis-ci.org/hiwanz/generator-17173fedp)
+# generator-fedp [![Build Status](https://secure.travis-ci.org/hiwanz/generator-fedp.png?branch=master)](https://travis-ci.org/hiwanz/generator-fedp)
 
 A generator for [Yeoman](http://yeoman.io).
 
@@ -23,7 +23,7 @@ $ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-17173fedp from npm, run:
+To install generator-fedp from npm, run:
 
 ```
 $ npm install -g generator-fedp
