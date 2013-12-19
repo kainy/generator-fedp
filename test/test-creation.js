@@ -5,14 +5,14 @@ var path    = require('path');
 var helpers = require('yeoman-generator').test;
 
 
-describe('17173fedp generator', function () {
+describe('fedp generator', function () {
     beforeEach(function (done) {
         helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
             if (err) {
                 return done(err);
             }
 
-            this.app = helpers.createGenerator('17173fedp:app', [
+            this.app = helpers.createGenerator('fedp:app', [
                 '../../app'
             ]);
             done();
