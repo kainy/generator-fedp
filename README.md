@@ -1,6 +1,6 @@
 # generator-fedp [![Build Status](https://secure.travis-ci.org/hiwanz/generator-fedp.png?branch=master)](https://travis-ci.org/hiwanz/generator-fedp)
 
-A generator for [Yeoman](http://yeoman.io).
+A front-end project initialization generator for [Yeoman](http://yeoman.io).
 
 
 ## Getting Started
