@@ -92,7 +92,7 @@ module.exports = function(grunt) {
     },
     clean:{
       spm : {
-        src: [ '**/.gitignore']
+        src: [ '**/.gitignore','**/.npmignore']
       }
     },
     yuidoc: {
