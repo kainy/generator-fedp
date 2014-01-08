@@ -67,13 +67,20 @@ module.exports = function(grunt) {
         }
       }
     },
+    imagemin: {
+      build: {
+        files: [
+          {expand: true, cwd: 'src/images', src: ['**/*.{png,gif,jpg}'], dest: 'dist/images'}
+		]
+      }
+    },
     copy: {
       build: {
         cwd: 'src/css',
         src: [ '*.css', '!**/*.styl', '!**/*.less' ],
         dest: 'dist/css',
         expand: true
-      },
+      }
     },
     watch: {
       coffee: {
@@ -115,7 +122,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build', ['coffee','concat','copy','uglify','cssmin','yuidoc']);
+  grunt.registerTask('build', ['coffee','concat','copy','uglify','cssmin','imagemin','yuidoc']);
 
   grunt.registerTask('test', ['jshint', 'qunit']);
 
