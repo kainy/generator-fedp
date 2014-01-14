@@ -34,7 +34,7 @@ module.exports = function(grunt) {
           "jquery": true,
           "bitwise": false,
           "browser": true,
-          "devel":false,
+          "devel":true,
           "camelcase": true,
           "curly": true,
           "eqeqeq": false,
@@ -53,9 +53,11 @@ module.exports = function(grunt) {
           "nonew":false,
           "plusplus":false,
           "quotmark": "single",
-          "undef":true,
-          "unused": true,
+          "smarttabs": true,
           "strict": false,
+          "sub": true,
+          "undef": true,
+          "unused": false,
           "multistr": false
         }
       }
