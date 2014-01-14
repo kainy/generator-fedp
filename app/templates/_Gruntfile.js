@@ -40,6 +40,7 @@ module.exports = function(grunt) {
           "eqeqeq": false,
           "es3":true,
           "esnext": false,
+          "expr": true,
           "forin":false,    
           "freeze":false,
           "immed": true,
