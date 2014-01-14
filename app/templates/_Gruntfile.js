@@ -66,14 +66,14 @@ module.exports = function(grunt) {
     cssmin: {
       build: {
         files: {
-          'dist/css/style.min.css': [ 'src/css/*.css' ]
+          'dist/css/<%= pkg.name %>-<%= pkg.version %>.min.css': [ 'src/css/*.css' ]
         }
       }
     },
     copy: {
       build: {
         cwd: 'src/css',
-        src: [ '*.css', '!**/*.styl', '!**/*.less' ],
+        src: [ '*.css' ],
         dest: 'dist/css',
         expand: true
       },
