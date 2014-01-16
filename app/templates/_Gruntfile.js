@@ -15,7 +15,16 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %>-<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
+        banner: '/*! <%= pkg.name %>-<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n',
+        beautify: {
+          ascii_only: true
+        },
+        compress: {
+          global_defs: {
+            'DEBUG': false
+          },
+          dead_code: true
+        }
       },
       dist: {
         files: {
@@ -30,36 +39,37 @@ module.exports = function(grunt) {
       files: ['src/**/*.js'],
       options: {
         // options here to override JSHint defaults
+        "jquery": true,
+        "bitwise": false,
+        "browser": true,
+        "devel":true,
+        "camelcase": true,
+        "curly": true,
+        "eqeqeq": false,
+        "es3":true,
+        "esnext": false,
+        "expr": true,
+        "forin":false,    
+        "freeze":false,
+        "immed": true,
+        "indent": false,
+        "latedef": true,
+        "maxdepth":3,
+        "maxparams":3,
+        "newcap": false,
+        "noarg": false,
+        "noempty":false,
+        "nonew":false,
+        "plusplus":false,
+        "quotmark": "single",
+        "smarttabs": true,
+        "strict": false,
+        "sub": true,
+        "undef": true,
+        "unused": false,
+        "multistr": false,
         globals: {
-          "jquery": true,
-          "bitwise": false,
-          "browser": true,
-          "devel":true,
-          "camelcase": true,
-          "curly": true,
-          "eqeqeq": false,
-          "es3":true,
-          "esnext": false,
-          "expr": true,
-          "forin":false,    
-          "freeze":false,
-          "immed": true,
-          "indent": false,
-          "latedef": true,
-          "maxdepth":3,
-          "maxparams":3,
-          "newcap": false,
-          "noarg": false,
-          "noempty":false,
-          "nonew":false,
-          "plusplus":false,
-          "quotmark": "single",
-          "smarttabs": true,
-          "strict": false,
-          "sub": true,
-          "undef": true,
-          "unused": false,
-          "multistr": false
+          
         }
       }
     },
@@ -71,12 +81,12 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      build: {
+      css: {
         cwd: 'src/css',
         src: [ '*.css' ],
         dest: 'dist/css',
         expand: true
-      },
+      }
     },
     watch: {
       coffee: {
@@ -84,7 +94,7 @@ module.exports = function(grunt) {
         tasks: ['build']
       },
       concat: {
-        files: ['js/*.js', 'lib/*.js'],
+        files: ['js/**.js', 'lib/**.js'],
         tasks: ['build']
       }
     },
@@ -118,9 +128,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build', ['coffee','concat','copy','uglify','cssmin','yuidoc']);
+  grunt.registerTask('build', ['test','coffee','concat','copy','uglify','cssmin','yuidoc']);
 
   grunt.registerTask('test', ['jshint', 'qunit']);
 
-  grunt.registerTask('default', ['clean']);
+  grunt.registerTask('default', ['clean','build', 'watch']);
 };
