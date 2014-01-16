@@ -62,6 +62,7 @@ module.exports = function(grunt) {
         "nonew":false,
         "plusplus":false,
         "quotmark": "single",
+        "scripturl": true,
         "smarttabs": true,
         "strict": false,
         "sub": true,
