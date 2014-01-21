@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       files: ['src/**/*.js'],
       options: {
         // read jshint options from jshintrc file 
-        "jshintrc": true
+        "jshintrc": ".jshintrc"
       }
     },
     cssmin: {
@@ -97,9 +97,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build', ['test','coffee','concat','copy','uglify','cssmin','yuidoc']);
+  grunt.registerTask('build', ['test','coffee','concat','uglify','cssmin','copy','yuidoc']);
 
   grunt.registerTask('test', ['jshint', 'qunit']);
 
-  grunt.registerTask('default', ['clean','build', 'watch']);
+  grunt.registerTask('default', ['build', 'watch']);
 };
