@@ -60,10 +60,10 @@ module.exports = function(grunt) {
     watch: {
       coffee: {
         files: ['src/js/**/*.coffee'],
-        tasks: ['build']
+        tasks: ['coffee']
       },
-      concat: {
-        files: ['js/**.js', 'lib/**.js'],
+      scripts: {
+        files: ['src/js/*.js', 'src/css/*.css'],
         tasks: ['build']
       }
     },
