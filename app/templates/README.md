@@ -5,13 +5,13 @@
 
 	/bower_components
 	/demo
+		/images
 		index.html
 	/dist
 		/css
 			/lib
 			/style.css
 			/style.min.css
-		/images
 		/js
 			/lib
 			/script.js
@@ -25,7 +25,6 @@
 			/sass
 			/style.css
 			/style.min.css
-		/images
 		/js
 			/coffee
 			/lib

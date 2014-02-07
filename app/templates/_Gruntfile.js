@@ -15,7 +15,16 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %>-<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n'
+        banner: '/*! <%= pkg.name %>-<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n',
+        beautify: {
+          ascii_only: true
+        },
+        compress: {
+          global_defs: {
+            'DEBUG': false
+          },
+          dead_code: true
+        }
       },
       dist: {
         files: {
@@ -29,55 +38,21 @@ module.exports = function(grunt) {
     jshint: {
       files: ['src/**/*.js'],
       options: {
-        // options here to override JSHint defaults
-        globals: {
-          "jquery": true,
-          "bitwise": false,
-          "browser": true,
-          "devel":false,
-          "camelcase": true,
-          "curly": true,
-          "eqeqeq": false,
-          "es3":true,
-          "esnext": false,
-          "forin":false,    
-          "freeze":false,
-          "immed": true,
-          "indent": false,
-          "latedef": true,
-          "maxdepth":3,
-          "maxparams":3,
-          "newcap": false,
-          "noarg": false,
-          "noempty":false,
-          "nonew":false,
-          "plusplus":false,
-          "quotmark": "single",
-          "undef":true,
-          "unused": true,
-          "strict": false,
-          "multistr": false
-        }
+        // read jshint options from jshintrc file 
+        "jshintrc": ".jshintrc"
       }
     },
     cssmin: {
       build: {
         files: {
-          'dist/css/style.min.css': [ 'src/css/*.css' ]
+          'dist/css/<%= pkg.name %>-<%= pkg.version %>.min.css': [ 'src/css/*.css' ]
         }
       }
     },
-    imagemin: {
-      build: {
-        files: [
-          {expand: true, cwd: 'src/images', src: ['**/*.{png,gif,jpg}'], dest: 'dist/images'}
-		]
-      }
-    },
     copy: {
-      build: {
+      css: {
         cwd: 'src/css',
-        src: [ '*.css', '!**/*.styl', '!**/*.less' ],
+        src: [ '*.css' ],
         dest: 'dist/css',
         expand: true
       }
@@ -85,10 +60,10 @@ module.exports = function(grunt) {
     watch: {
       coffee: {
         files: ['src/js/**/*.coffee'],
-        tasks: ['build']
+        tasks: ['coffee']
       },
-      concat: {
-        files: ['js/*.js', 'lib/*.js'],
+      scripts: {
+        files: ['src/js/*.js', 'src/css/*.css'],
         tasks: ['build']
       }
     },
@@ -122,9 +97,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('build', ['coffee','concat','copy','uglify','cssmin','imagemin','yuidoc']);
+  grunt.registerTask('build', ['test','coffee','concat','uglify','cssmin','copy','yuidoc']);
 
   grunt.registerTask('test', ['jshint', 'qunit']);
 
-  grunt.registerTask('default', ['clean']);
+  grunt.registerTask('default', ['build', 'watch']);
 };

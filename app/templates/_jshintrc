@@ -2,12 +2,13 @@
     "jquery": true,
     "bitwise": false,
     "browser": true,
-    "devel":false,
+    "devel":true,
     "camelcase": true,
     "curly": true,
     "eqeqeq": false,
     "es3":true,
     "esnext": false,
+    "expr": true,
     "forin":false,    
     "freeze":false,
     "immed": true,
@@ -21,8 +22,14 @@
     "nonew":false,
     "plusplus":false,
     "quotmark": "single",
-    "undef":true,
-    "unused": true,
+    "scripturl": true,
+    "smarttabs": true,
     "strict": false,
-    "multistr": false
+    "sub": true,
+    "undef": true,
+    "unused": false,
+    "multistr": false,
+    "globals": {
+      "jQuery": true
+    }
 }
