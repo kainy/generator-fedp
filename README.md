@@ -35,6 +35,12 @@ Finally, initiate the generator:
 $ yo fedp
 ```
 
+To initiate the generator without the automatic execution of ```bower``` and ```npm``` after scaffolding has finished, run:
+
+```
+$ yo fedp --skip-install
+```
+
 ### Getting To Know Yeoman
 
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
